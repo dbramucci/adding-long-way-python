@@ -5,6 +5,8 @@ You should not convert the input into a pair of ints to perform the addition
 like the placeholder does. The goal is to implement the same algorithm for
 adding as you would do by hand.
 
+You should replace the code in `add` in `main.py` for this problem.
+
 Recall that a digit is an integer d such that 0 <= d <= 9. 
 
 # Examples
