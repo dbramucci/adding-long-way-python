@@ -2,8 +2,10 @@ from hypothesis import given, settings
 from hypothesis.strategies import integers
 from main import *
 
+
 def all_digits(digits: List[int]) -> bool:
     return all(0 <= digit < 10 for digit in digits)
+
 
 def test_two_digits_to_digit():
     for a, b in ((x, y) for x in range(10) for y in range(10 - x)):
@@ -14,7 +16,8 @@ def test_two_digits_to_digit():
         assert a + b == c, 'Can add two digits together that add to' \
                            ' less than 10'
         assert all_digits(c_list), 'the answer is a list of digits' \
-                                  f' (a={a}, b={b})'
+                                   f' (a={a}, b={b})'
+
 
 def test_add_two_digits():
     for a, b in ((x, y) for x in range(10) for y in range(10)):
@@ -24,7 +27,7 @@ def test_add_two_digits():
         c = from_digit_list(c_list)
         assert a + b == c, f'Can add two digits together'
         assert all_digits(c_list), 'the answer is a list of digits' \
-                                  f' (a={a}, b={b})'
+                                   f' (a={a}, b={b})'
 
 
 @settings(max_examples=1000)
